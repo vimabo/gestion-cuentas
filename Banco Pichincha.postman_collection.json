@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "a12232ed-5a77-4f19-b03c-27bcb4db818c",
+		"name": "Banco Pichincha",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/clientes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Victor Manuel Bocanegra\",\r\n  \"genero\": \"M\",\r\n  \"edad\": 21,\r\n  \"identificacion\":\"940403642\",\r\n  \"direccion\": \"san gil - santander\",\r\n  \"telefono\": \"2345678\",\r\n  \"contraseña\": \"1234\",\r\n  \"estado\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/cuentas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"numeroCuenta\": \"424244234\",\r\n  \"tipoCuenta\": 1,\r\n  \"saldoInicial\": 30000,\r\n  \"cliente\": {\r\n      \"id\":1\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cuentas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cuentas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/movimientos",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fecha\": \"2023-07-25T12:00:00Z\",\r\n  \"valor\": 10000,\r\n  \"tipoMovimiento\": 1,\r\n  \"cuenta\": {\r\n      \"id\":1\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/movimientos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"movimientos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/cuentas/getCuentasByCliente/1?fechaInicial=2023-03-22&fechaFinal=2023-05-25",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cuentas/getCuentasByCliente/1?fechaInicial=2023-03-22&fechaFinal=2023-05-25",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cuentas",
+						"getCuentasByCliente",
+						"1"
+					],
+					"query": [
+						{
+							"key": "fechaInicial",
+							"value": "2023-03-22"
+						},
+						{
+							"key": "fechaFinal",
+							"value": "2023-05-25"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
