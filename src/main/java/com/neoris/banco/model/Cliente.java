@@ -34,11 +34,7 @@ public class Cliente extends Persona {
 	@OneToMany(fetch = FetchType.LAZY, targetEntity = Cuenta.class, mappedBy = "cliente")
 	private List<Cuenta> cuentas;
 
-	@JsonIgnore
-	@ManyToOne(fetch = FetchType.LAZY, targetEntity = Movimientos.class)
-	private Movimientos movimientos;
-	
-	
+
 
 	public Cliente(){
 		super();
@@ -73,14 +69,6 @@ public class Cliente extends Persona {
 
 	public void setCuentas(List<Cuenta> cuentas) {
 		this.cuentas = cuentas;
-	}
-
-	public Movimientos getMovimientos() {
-		return movimientos;
-	}
-
-	public void setMovimientos(Movimientos movimientos) {
-		this.movimientos = movimientos;
 	}
 
 }
