@@ -15,6 +15,7 @@ c. Compilación: mvn instalación limpia.
 URL de JDCB: jdbc:h2:mem:banco
 
 Usuario: root
+
 Contraseña: ro
 
 # DOCKERFILE
